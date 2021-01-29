@@ -1,26 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<Header />
+<!-- TODO: Add hourly weather carousel to the top --> 
+<FrontPage v-bind:feeds="feeds" /> 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header'
+import FrontPage from './components/FrontPage'
+import Parser from 'rss-parser'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'app',
+    components: {
+        Header,
+        FrontPage
+    },
+    data() {
+        return {
+            feeds: [],
+        }
+    },
+    created() {
+        let parser = new Parser();
+        const proxyURL = "https://cors-anywhere.herokuapp.com/";
+        const urls = ["https://slate.com/feeds/all.rss","https://www.postandcourier.com/search/?t=article&fl=top_story&nsa=eedition&l=10&s=start_time&sd=desc&f=rss"]
+        
+        urls.forEach(url => {
+            parser.parseURL(proxyURL + url)
+        .then(feed => {
+            console.log(feed)
+            this.feeds.push(feed)}
+            )
+        .catch(err => console.log(err))
+
+        })
+        
+    }
+    
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>

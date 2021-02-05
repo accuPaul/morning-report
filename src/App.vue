@@ -45,9 +45,8 @@ export default {
         const urls = ["https://www.pbs.org/newshour/feeds/rss/headlines","https://www.postandcourier.com/search/?t=article&fl=top_story&nsa=eedition&l=100&s=start_time&sd=desc&f=rss"]
         
         urls.forEach(url => {
-            parser.parseURL(proxyURL + url)
+            parser.parseURL(proxyURL+url)
         .then(feed => {
-            console.log(feed)
             this.feeds.push(feed)}
             )
         .catch(err => console.log(err))

@@ -4,7 +4,12 @@ node_modules
 
 
 # local env files
+<<<<<<< HEAD
 .env
+=======
+.env*
+.env.*
+>>>>>>> netlify-deploy
 .env.local
 .env.*
 

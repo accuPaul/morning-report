@@ -11,15 +11,26 @@
         </div>
     </template>
 </Suspense>
+<Suspense>
+    <template #default>
+        <Almanac />
+    </template>
+    <template #fallback>
+        <div class="container">
+            <i class="fa fa-spinner">Loading almanac data...</i>
+        </div>
+    </template>
+</Suspense>
 <FrontPage v-bind:feeds="feeds" /> 
 </template>
 
 <script>
-import Header from './components/Header'
-import FrontPage from './components/FrontPage'
-import Forecast from './components/Forecast'
+import Header from './components/layout/Header'
+import FrontPage from './components/layout/FrontPage'
+import Forecast from './components/layout/Forecast'
 import Parser from 'rss-parser'
 import { onErrorCaptured, ref } from 'vue'
+import Almanac from './components/layout/Almanac.vue'
 
 export default {
     name: 'app',
@@ -32,7 +43,8 @@ export default {
     components: {
         Header,
         FrontPage,
-        Forecast
+        Forecast,
+        Almanac
     },
     data() {
         return {

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Source from './Source.vue'
+import Source from '../Source.vue'
 export default {
   components: { Source },
     props: ["feeds"],

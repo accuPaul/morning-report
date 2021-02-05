@@ -4,10 +4,19 @@ node_modules
 
 
 # local env files
+<<<<<<< HEAD
 .env*
 .env.*
+=======
+<<<<<<< HEAD
+.env
+=======
+.env*
+.env.*
+>>>>>>> netlify-deploy
+>>>>>>> master
 .env.local
-.env.*.local
+.env.*
 
 # Log files
 npm-debug.log*

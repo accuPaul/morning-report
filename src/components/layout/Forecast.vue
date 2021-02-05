@@ -6,13 +6,13 @@
             
         <div class="card-group">
            <div class="col col-sm-1 align-self-center" v-show="hour > 0">
-                       <button @click="hour>0?hour--:hour"><i class="fa fa-caret-left"></i></button>
+                       <button @click="hour>0?hour--:hour"><i class="fa fa-caret-left fa-lg"></i></button>
            </div>
             <div class="col-sm-auto" v-bind:key="forecast.EpochDateTime" v-for="forecast in forecasts?.slice(hour,hour+numHours)">
                <ForecastDetails v-bind:forecast="forecast" />
             </div>
             <div class="col col-sm-1 align-self-center" v-show="hour < limit">
-                <button @click="hour>=limit?hour=limit:hour++"><i class="fa fa-caret-right"></i></button>
+                <button @click="hour>=limit?hour=limit:hour++"><i class="fa fa-caret-right fa-lg"></i></button>
            </div>
         </div>
         </div>
@@ -23,7 +23,7 @@
 <script>
 import axios from 'axios'
 import { ref } from 'vue'
-import ForecastDetails from './ForecastDetails'
+import ForecastDetails from '../ForecastDetails'
 
 export default {
     components: { ForecastDetails },

@@ -1,10 +1,11 @@
 <template>
-<div class="card" v-bind:class="forecast.hasPrecipitation?'border-danger':'border-success'">
+<div v-bind:class="[forecast.HasPrecipitation?'card border-danger':'card border-success']">
     <div class="card-header">{{ forecastTime }}</div>
     <img v-bind:src="getIcon" class="card-img-top" />
     <div class="card-body">
         <div class="card-title">{{forecast.IconPhrase}}</div>
-        <div class="card-text">{{forecast.Temperature.Value}}</div>
+        <div class="card-text">{{forecast.Temperature.Value}}&deg;
+        </div>
     </div>
     <div class="list-group-flush">
         <div class="list-group-item">

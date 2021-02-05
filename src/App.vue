@@ -41,8 +41,8 @@ export default {
     },
     created() {
         let parser = new Parser();
-        const proxyURL = "https://cors-anywhere.herokuapp.com/";
-        const urls = ["https://slate.com/feeds/all.rss","https://www.postandcourier.com/search/?t=article&fl=top_story&nsa=eedition&l=100&s=start_time&sd=desc&f=rss"]
+        const proxyURL = process.env.VUE_APP_PROXY;
+        const urls = ["https://www.pbs.org/newshour/feeds/rss/headlines","https://www.postandcourier.com/search/?t=article&fl=top_story&nsa=eedition&l=100&s=start_time&sd=desc&f=rss"]
         
         urls.forEach(url => {
             parser.parseURL(proxyURL + url)

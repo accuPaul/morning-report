@@ -1,24 +1,13 @@
 # morning-report
 
-## Project setup
-```
-npm install
-```
+## Project overview
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is a project I did to experiment with the Vue.JS framework. It pulls in data from both RSS feeds and API's.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Features
 
-### Lints and fixes files
-```
-npm run lint
-```
+- VUE3, especially the <Suspense> tag.
+- Bootstrap (via CDN, as BootstrapVue does not yet play nice with Vue3)
+- Font Awesome
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Note that layout is not my strong suit, but I did incorporate some fun features, like a scrollable card deck for the hourly forecast.

@@ -1,9 +1,8 @@
 <template>
-    <div class="list-group-item flex-column align-items-start mb-2">
-            <a :href="article.link"><h5>{{article.title}}</h5></a>
-            <p class="mb-1">{{ article.contentSnippet}} </p>
-            <small>{{article.pubDate}}</small>
-        </div>
+    <li class="flex-column align-items-start ml-1 mb-1">
+            <a :href="article.link" :hover="article.contentSnippet" data-toggle="tooltip" :title="article.contentSnippet">{{article.title}}</a>
+            <p><small>{{article.pubDate}}</small></p>
+        </li>
 </template>
 
 <script>

@@ -1,21 +1,18 @@
 <template>
-<div class="container">
-    <div class="card" v-bind:key="feed.title" v-for="feed in feeds">
-        <div class="card-header">{{ feed.title }}</div>
-        <div class="card-body">
-            <div v-bind:key="article.title" v-for="article in feed.items" class="list-group">
-            <Article v-bind:article="article" />
-            </div>
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-sm-6" v-bind:key="feed.title" v-for="feed in feeds">
+            <Source v-bind:feed="feed" />
         </div>
     </div>
 </div>
 </template>
 
 <script>
-import Article from './Article.vue'
+import Source from './Source.vue'
 export default {
-  components: { Article },
-    props: ["feeds"]
+  components: { Source },
+    props: ["feeds"],
 }
 </script>
 
